@@ -1,15 +1,15 @@
 #include "shell.h"
 /**
  * main - This is a simple shell created by
- * Marisol Ramirez Henao and David Alejandro Hincapié
- * for Holberton School
+ * Ebenezer Mose and Daisy Cherono
+ * for ALX simple_shell project
  * Return: 0 if success
  */
 int main(void)
 {
-	ssize_t bytes_rd = 0; /** Bytes leídos de un getline*/
-	size_t bf_size = 0; /**Tamaño del buffer*/
-	char *entry = NULL, *arguments[20]; /**String de args que ingresa el usr*/
+	ssize_t bytes_rd = 0; /** Bytes red in getline*/
+	size_t bf_size = 0; /**Buffer size*/
+	char *entry = NULL, *arguments[20]; /**Strings of arg entered by usr*/
 	int counter = 1, vf_stat = 0, exist_stat = 0, exit_stat = 0, blt_stat = 0;
 
 	_printp("$ ", 2);/**prompt mini-shell*/
@@ -21,8 +21,8 @@ int main(void)
 			fill_args(entry, arguments);
 			if (arguments[0] != NULL)
 			{
-				exist_stat = exist(arguments[0]);/**Exist evalua si path ingresado existe*/
-				if (exist_stat != 0)/**No encontró el archivo*/
+				exist_stat = exist(arguments[0]);/**Evaluate exisiting path if entered*/
+				if (exist_stat != 0)/**File not found*/
 				{
 					vf_stat = verify_path(arguments);
 					if (vf_stat == 0)
@@ -34,7 +34,7 @@ int main(void)
 						exit_stat = print_not_found(arguments, counter), free(entry);
 					}
 				}
-				else /**Encontró el archivo*/
+				else /**File found*/
 					exit_stat = exec(arguments), free(entry);
 			}
 			else
