@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * main - This is a simple shell created by
  * Marisol Ramirez Henao and David Alejandro Hincapié
