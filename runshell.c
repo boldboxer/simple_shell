@@ -25,6 +25,7 @@ int main(void)
 		}
 
 		int i = 0;
+
 		while (cmd[i] != '\n')
 		{
 			i++;
@@ -32,6 +33,7 @@ int main(void)
 		cmd[i] = '\0';
 
 		int pid = fork();
+
 		if (pid == -1)
 		{
 			perror("fork failed");
